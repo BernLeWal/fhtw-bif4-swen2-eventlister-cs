@@ -10,7 +10,7 @@ namespace EventListerInCSharp.FilterHandling
     {
         public IEnumerable<string> Filter(IEnumerable<string> content, string filter)
         {
-            var filterItems = filter.Split(",").Select(x => x.Trim());
+            var filterItems = filter.Split(",").Select(x => x.Trim()).ToList();
             return content.Where(x =>
             {
                 foreach (var filterItem in filterItems)

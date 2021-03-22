@@ -13,6 +13,7 @@ namespace EventListerInCSharp
 {
     public class MainViewModel : INotifyPropertyChanged
     {
+        private readonly IArgumentHandler _argumentHandler;
         private readonly ICommunicationHandler _com;
         private readonly IContentInterpreter _interpreter;
         private readonly IFilterHandler _filter;
@@ -20,8 +21,7 @@ namespace EventListerInCSharp
         public string FilterText { get; set; }
 
         private RelayCommand _filterCommand = null;
-        public RelayCommand FilterCommand
-            => _filterCommand ?? (_filterCommand = new RelayCommand(FilterAction));
+        public RelayCommand FilterCommand => _filterCommand ??= new RelayCommand(FilterAction);
 
         private List<string> _filteredData = new List<string>();
         public List<string> FilteredData
@@ -49,6 +49,7 @@ namespace EventListerInCSharp
 
         public MainViewModel(IArgumentHandler argumentHandler, ICommunicationHandler com, IContentInterpreter interpreter, IFilterHandler filter)
         {
+            _argumentHandler = argumentHandler;
             _com = com;
             _interpreter = interpreter;
             _filter = filter;

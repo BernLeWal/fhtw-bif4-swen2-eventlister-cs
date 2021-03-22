@@ -20,7 +20,7 @@ namespace EventListerInCSharp
             services.AddSingleton<ICommunicationHandler, NetworkCommunicationHandler>();
             services.AddSingleton<IContentInterpreter, HTTPOutputInterpreter>();
             services.AddSingleton<IFilterHandler, CsvBasedFilter>();
-
+            
             services.AddSingleton<MainViewModel>();
 
             _serviceProvider = services.BuildServiceProvider();

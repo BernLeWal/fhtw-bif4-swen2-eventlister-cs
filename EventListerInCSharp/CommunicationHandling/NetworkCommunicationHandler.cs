@@ -5,11 +5,13 @@ namespace EventListerInCSharp
 {
     public class NetworkCommunicationHandler : ICommunicationHandler
     {
+        private readonly IArgumentHandler _argumentHandler;
         private string _requestUri;
         private string _cachedContent = null;
 
         public NetworkCommunicationHandler(IArgumentHandler argumentHandler)
         {
+            _argumentHandler = argumentHandler;
             _requestUri = argumentHandler.DataSourceAddress;
         }
 
@@ -23,7 +25,7 @@ namespace EventListerInCSharp
             using var client = new HttpClient();
             var response = await client.GetAsync(_requestUri);
             var pageContent = await response.Content.ReadAsStringAsync();
-            return pageContent;
+            return _cachedContent = pageContent;
         }
     }
 }
