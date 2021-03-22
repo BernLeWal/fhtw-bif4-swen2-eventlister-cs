@@ -27,7 +27,7 @@ namespace EventListerInCSharp
                 entries.Add(entry);
             }
 
-            return entries;
+            return cachedOutput = entries;
         }
     }
 }
