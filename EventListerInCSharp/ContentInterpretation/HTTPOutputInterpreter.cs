@@ -5,17 +5,18 @@ namespace EventListerInCSharp
 {
     public class HTTPOutputInterpreter : IContentInterpreter
     {
-        private List<string> cachedOutput = null;
+        private List<string> _cachedOutput = null;
 
-        public virtual List<string> Interpret(string content)
+        public virtual IEnumerable<string> Interpret(string content)
         {
-            if (cachedOutput != null)
+            // maybe this should check whether the content has changed before returning cached results
+            if (_cachedOutput != null)
             {
-                return cachedOutput;
+                return _cachedOutput;
             }
 
-            List<string> entries = new List<string>();
-
+            var entries = new List<string>();
+            
             var regex = new Regex(
                 "<div\\ class=\"views-row.*?<div.*?class=\"title\".*?<a\\ href.*?\">\\W*(.*?)\\W*<\\/a>.*?<a class=\"more-link\".*?<\\/div>", 
                 RegexOptions.Singleline);
@@ -27,7 +28,7 @@ namespace EventListerInCSharp
                 entries.Add(entry);
             }
 
-            return cachedOutput = entries;
+            return _cachedOutput = entries;
         }
     }
 }
