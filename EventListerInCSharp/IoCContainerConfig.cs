@@ -10,7 +10,7 @@ namespace EventListerInCSharp
 {
     public class IoCContainerConfig
     {
-        private ServiceProvider _serviceProvider;
+        private readonly ServiceProvider _serviceProvider;
 
         public IoCContainerConfig()
         {
