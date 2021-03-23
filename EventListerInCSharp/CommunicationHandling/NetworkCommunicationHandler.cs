@@ -26,6 +26,8 @@ namespace EventListerInCSharp
 
         public async Task<string> GetContentAsync()
         {
+            // TODO: consider memory cache based on an amount of time to cache
+            // https://docs.microsoft.com/de-de/dotnet/api/system.runtime.caching.memorycache?view=dotnet-plat-ext-5.0&viewFallbackFrom=net-5.0
             if (_cachedContent != null)
             {
                 // we have a cached result, no need for fetching it again

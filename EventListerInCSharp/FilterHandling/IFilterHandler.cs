@@ -12,5 +12,9 @@ namespace EventListerInCSharp.FilterHandling
     public interface IFilterHandler
     {
         IEnumerable<string> Filter(IEnumerable<string> content, string filter);
+
+        IEnumerable<string> GetFilterItemsFromFromFilterString(string filter);
+        string GetFilterStringFromFilterItems(IEnumerable<string> filterItems);
+
     }
 }

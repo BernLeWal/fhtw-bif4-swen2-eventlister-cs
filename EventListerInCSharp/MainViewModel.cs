@@ -78,13 +78,14 @@ namespace EventListerInCSharp
             _filter = filter;
 
             // pre-fill the filter text with filter criteria provided via the command line
-            // this assumes a CsvBasedFilter!
-            FilterText = string.Join(", ", argumentHandler.FilterCriterias);
+            FilterText = _filter.GetFilterStringFromFilterItems(argumentHandler.FilterCriterias);
         }
 
 
         protected virtual void OnPropertyChanged([CallerMemberName] string propertyName = null)
         {
+            // Validation of property names:
+            //    if(TypeDescriptor.GetProperties(this)[propertyName] != null) { ... }
             PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
         }
     }

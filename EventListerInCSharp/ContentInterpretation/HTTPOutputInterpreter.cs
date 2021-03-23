@@ -9,7 +9,7 @@ namespace EventListerInCSharp
 
         public virtual IEnumerable<string> Interpret(string content)
         {
-            // maybe this should check whether the content has changed before returning cached results
+            // TODO: maybe this should check whether the content has changed before returning cached results (or invalidate by time)
             if (_cachedOutput != null)
             {
                 return _cachedOutput;
