@@ -5,13 +5,13 @@ namespace EventListerInCSharp
 {
     public class HTTPOutputInterpreter : IContentInterpreter
     {
-        private List<string> cachedOutput = null;
+        private List<string> _cachedOutput = null;
 
         public virtual List<string> Interpret(string content)
         {
-            if (cachedOutput != null)
+            if (_cachedOutput != null)
             {
-                return cachedOutput;
+                return _cachedOutput;
             }
 
             List<string> entries = new List<string>();
@@ -27,7 +27,7 @@ namespace EventListerInCSharp
                 entries.Add(entry);
             }
 
-            return cachedOutput = entries;
+            return _cachedOutput = entries;
         }
     }
 }
