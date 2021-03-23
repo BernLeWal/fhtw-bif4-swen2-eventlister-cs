@@ -7,7 +7,7 @@ namespace EventListerInCSharp
     {
         private List<string> _cachedOutput = null;
 
-        public virtual List<string> Interpret(string content)
+        public virtual IEnumerable<string> Interpret(string content)
         {
             if (_cachedOutput != null)
             {

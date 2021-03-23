@@ -4,6 +4,6 @@ namespace EventListerInCSharp
 {
     public interface IContentInterpreter
     {
-        List<string> Interpret(string content);
+        IEnumerable<string> Interpret(string content);
     }
 }
