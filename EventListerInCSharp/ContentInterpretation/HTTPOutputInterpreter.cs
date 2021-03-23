@@ -14,8 +14,8 @@ namespace EventListerInCSharp
                 return _cachedOutput;
             }
 
-            List<string> entries = new List<string>();
-
+            var entries = new List<string>();
+            
             var regex = new Regex(
                 "<div\\ class=\"views-row.*?<div.*?class=\"title\".*?<a\\ href.*?\">\\W*(.*?)\\W*<\\/a>.*?<a class=\"more-link\".*?<\\/div>", 
                 RegexOptions.Singleline);
