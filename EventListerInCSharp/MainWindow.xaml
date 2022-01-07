@@ -6,7 +6,7 @@
         xmlns:local="clr-namespace:EventListerInCSharp"
         mc:Ignorable="d"
         Title="Events" Height="377" Width="371"
-        DataContext="{Binding MainViewModel, Source={StaticResource IoCConfig}}">
+        DataContext="{Binding MainViewModel, Source={StaticResource IoCConfig2}}">
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition Height="1*"/>

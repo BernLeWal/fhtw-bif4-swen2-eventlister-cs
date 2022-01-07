@@ -1,0 +1,8 @@
+{
+  "profiles": {
+    "EventListerInCSharp": {
+      "commandName": "Project",
+      "commandLineArgs": "info"
+    }
+  }
+}

@@ -5,7 +5,7 @@
              StartupUri="MainWindow.xaml">
     <Application.Resources>
         <ResourceDictionary>
-            <local:IoCContainerConfig x:Key="IoCConfig" />
+            <local:IoCContainerConfig x:Key="IoCConfig2" />
         </ResourceDictionary>
     </Application.Resources>
 </Application>
